@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../logo/fav.svg" type="image/x-icon"> <!-- Link to your favicon -->
+    <title>Portfolio-Pratik_Joshi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+	
+	/* Resetting default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::selection{
+color:black;
+background-color: orange;}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    background-color: #000;
+    color: #fde68c;
+    padding: 5px;
+    font-size: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    width: 93%;
+}
+
+#logo{
+    margin: 10px;
+    padding: 15px;
+border-radius: 30%;
+}
+.logo, #nav {
+    margin: 0px 6%; 
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+
+.logo:hover{
+background-color: black;
+box-shadow: 10px rgb(2.0, 0, 0, 1.0);
+}
+
+#title{
+	margin:5px;
+	padding:10px;
+	color : skyblue;
+	border-top:ridge;
+	border-bottom:ridge;
+	border-color: lightgreen;
+}
+
+#nav:hover{
+background-color: red;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 30px 15px;
+    border-style: ridge;
+    width: 86%;
+    margin-bottom: 30px;
+    border-radius: 5%;
+    border-color: #f2bd45;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    color: #ffff00;
+}
+
+
+#pic{
+border-radius: 50%;
+ 
+}
+
+img:hover{
+   box-shadow: 0 5px 8px #900c3f;
+
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+a {
+
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Portfolio Section */
+.portfolio {
+    width: 86%;
+    padding: 50px 20px;
+    text-align: center;
+    border-style: ridge;
+    border-radius: ;
+    border-color: #f2bd45;
+}
+
+
+.portfolio:active {
+border-color: orange;
+}
+
+
+.portfolio-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+ul {
+  list-style: none;
+}
+
+ul li:before {
+  content: '✓ ';
+}
+.portfolio-item {
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.portfolio-item:hover {
+     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+     color: orange;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+}
+
+.portfolio-item h3 {
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact {
+  text-align: center;
+    padding: 30px 15px;
+    border-style: ridge;
+    width: 86%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5%;
+    border-color: #f2bd45;
+}
+h2{
+ color: #ffff00;
+}
+
+
+
+.contact h2 {
+   
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
+
+
+
+#email{
+color: white;
+}
+
+#email:hover{
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.social{ 
+margin: 2px;
+padding: 5px;
+border-radius: 40%;
+align-items: center;
+justify-content: center;
+
+}
+
+#social-mail:hover{
+}
+#social-ln:hover{
+background-color: #0077B5;
+}
+#social-git{
+border: ridge;
+border-color: transparent;
+}
+#social-git:hover{
+border-color: gray;
+}
+
+#social-x:hover{
+background-color: #1da1f2;
+}
+#social-insta:hover{
+background-color: #cd486b ;
+}
+
+
+
+                   
+.like{
+  filter:invert(36%) sepia(99%) saturate(7404%) hue-rotate(4deg) brightness(95%) contrast(118%);
+
+}
+
+#count{
+font-size:10px;
+}
+
+ 
+/* Footer */
+.footer {
+	margin:10px;
+    text-align: center;
+    padding: 20px;
+    width: 85%;
+    color: white;
+    border-style: ridge;
+    border-color: #f2bd45;
+
+}
+
+
+hr{
+	
+margin-bottom:10px;
+width:40%;
+background-color:red;
+border-color:red;
+}
+	
+	</style>
+
+    <script>
+    // Function to track unique visitors
+        function trackVisitor() {
+            const uniqueVisitorKey = 'hasVisited';
+            const totalVisitorsKey = 'totalVisitors';
+
+            // Check if user has visited before
+            if (!localStorage.getItem(uniqueVisitorKey)) {
+                // User is new, increment visitor count
+                let totalVisitors = parseInt(localStorage.getItem(totalVisitorsKey)) || 0;
+                totalVisitors++;
+                localStorage.setItem(totalVisitorsKey, totalVisitors);
+                localStorage.setItem(uniqueVisitorKey, true); // Mark as visited
+            }
+
+    // Display the total number of unique visitors
+            const totalVisitors = localStorage.getItem('totalVisitors') || 0;
+            document.getElementById('visitorCount').innerText = `Visitors: ${totalVisitors}`;
+        }
+
+        // Function to increment the click count, but limit each user to 1 click
+        function incrementCount() {
+            const userClickedKey = 'hasClicked';
+            const clickLimit = 1;
+            let count = parseInt(localStorage.getItem('count')) || 0;
+
+            // Check if the user has already clicked
+            if (!localStorage.getItem(userClickedKey)) {
+                // If not clicked yet, increment the count
+                count++;
+                localStorage.setItem('count', count);
+                document.getElementById('count').innerText = `Clicks: ${count}`;
+                localStorage.setItem(userClickedKey, true); // Mark as clicked
+            } else {
+                // If clicked already, show a message
+                document.getElementById('message').innerText = `You can only click once!`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // On page load, track the visitor and display the current click count
+            trackVisitor();
+            document.getElementById('count').innerText = `Clicks: ${localStorage.getItem('count') || 0}`;
+        });
+    </script>
+
+</head>
+<!-- ------------------------------- body ----------------------------------- -->
+<body >
+    <!---------------------- Header ------------------------------->
+    <header class="header">
+        <div class="logo">
+           <img src="../logo/p-logo.png" width="150" id="logo">
+        </div>
+		
+		<h1><label id="title">Pratik Joshi</label></h1>
+		
+        <nav class="navbar">
+            <ul>
+                <p><a href="#about" id="nav">About</a></p>
+                <p><a href="#portfolio" id="nav">Portfolio</a></p>
+                <p><a href="#contact" id="nav">Contact</a></p>
+            </ul>
+        </nav>
+    </header>
+    <!---------------------- /Header ------------------------------->
+
+    <!-- ---------------------- About Section ---------------------- -->
+    <center>
+        <section id="about" class="about">
+        <h2>About Me</h2>
+         <div >
+           <img src="../img/profile.jpg" width="25%" id="pic">
+        </div>
+        <ul>
+  <p> <li>Hi, I'm Pratik Joshi, a B.Tech graduate in Computer Science and Engineering.</li></p>
+  <p><li>I have a strong foundation in Core Java, Selenium, Core Python, and Software Automation Testing.</li></p>
+  <p><li>Additionally, I enjoy experimenting with web design, exploring various forms and layouts to further develop my skills.!</li></p>
+</ul>
+    </section>
+   
+    <!-- ---------------------- /About Section ---------------------- -->
+
+    <!-- --------------------- Portfolio Section --------------------- -->
+    <section id="portfolio" class="portfolio">
+        <h2>Certifications</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300" alt="Project 1">
+                <h3>Software Testing</h3>
+                <p>Hands on Software Automation testing using Java - selenium.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://github.com/Pratiks-Desk/CV/blob/main/assets/img/CMS%20Cert.jpg" alt="Project 2">
+                <h3>CITA</h3>
+                <p>strong understanding about hardware and networking .</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300" alt="Project 3">
+                <h3>HTML</h3>
+                <p>Often enjoy experimenting with web design.!</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/300" alt="Project 4">
+                <h3>Python</h3>
+                <p>Good Understanding about python</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- --------------------- /Portfolio Section --------------------- -->
+
+    <!-- ------------------------ Contact Section ------------------------ -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <a href="mailto:connect.pratikjoshi@gmail.com" class="fa fa-envelope-o social" > : <a href="mailto:connect.pratikjoshi@gmail.com">connect.pratikjoshi@gmail.com</a></a>
+        <div class=" social">
+            <a href="https://www.linkedin.com/in/er-pratik-joshi/" target="blank" class="fa fa-linkedin social" id="social-ln"></a>
+            <a href="https://github.com/Pratiks-Desk" target="blank" class="fa fa-github social" id="social-git"></a>
+             <a href="https://x.com/pratik_desk" class="fa fa-twitter social" target="blank" id="social-x"></a>
+             <a href="https://www.instagram.com/profile.pratik/" class="fa fa-instagram social " target="blank" id="social-insta"></a>
+          
+
+      
+    </section>
+
+
+    <!-- ------------------------ /Contact Section ------------------------ -->
+
+    <!-- ------------------------ collect likes ------------------------ -->
+
+<hr>
+<div>
+<span>Click heart , if you like my design.!</span> <li class="fa fa-heart like" onclick="incrementCount().getElementById('count').innerText++"></li><sub id="count"></sub> 
+
+
+    <small></small>
+    <div id="visitorCount">Visitors: 0</div>
+  </div>
+<hr>
+
+    <!-- ------------------------ /collect likes ------------------------ -->
+
+    <!-- ----------------------------- Footer ----------------------------- -->
+
+    <footer class="footer">
+        <em><p>&copy; 2024 <a href="#" id="p-desk">P-Desk</a>. All rights reserved.</p></em>
+    </footer>
+
+        <!-- ----------------------------- Footer ----------------------------- -->
+
+</center>
+</body>
+    <!-- ----------------------------- /body ----------------------------- -->
+
+</html>
